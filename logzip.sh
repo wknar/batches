@@ -5,7 +5,7 @@
 
 # set data
 if [ $1 ]; then
-  if [[ ! $1 =~ "2[0-9]{3}[01][0-9][0123][0-9]$" ]]; then
+  if expr "$1" : "2[0-9]{3}[01][0-9][0123][0-9]$" > /dev/null; then
     echo "invalid argument. please write as YYYYMMDD"
     exit 0
   else
